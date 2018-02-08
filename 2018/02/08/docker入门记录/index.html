@@ -6,20 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://renyajie.com">
-  <title>test | 冰糖的博客</title>
+  <title>docker入门记录 | 冰糖的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="测试使用yilia主题">
-<meta name="keywords" content="233,244">
+  <meta name="description" content="前一阵子在Docker官网上自学了Docker，本文记录那些学习成果。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="test">
-<meta property="og:url" content="http://renyajie.com/2018/01/31/test/index.html">
+<meta property="og:title" content="docker入门记录">
+<meta property="og:url" content="http://renyajie.com/2018/02/08/docker入门记录/index.html">
 <meta property="og:site_name" content="冰糖的博客">
-<meta property="og:description" content="测试使用yilia主题">
+<meta property="og:description" content="前一阵子在Docker官网上自学了Docker，本文记录那些学习成果。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-04T06:39:10.030Z">
+<meta property="og:image" content="http://renyajie.com/images/docker.jpg">
+<meta property="og:updated_time" content="2018-02-08T06:30:49.731Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="test">
-<meta name="twitter:description" content="测试使用yilia主题">
+<meta name="twitter:title" content="docker入门记录">
+<meta name="twitter:description" content="前一阵子在Docker官网上自学了Docker，本文记录那些学习成果。">
+<meta name="twitter:image" content="http://renyajie.com/images/docker.jpg">
   
     <link rel="alternative" href="/atom.xml" title="冰糖的博客" type="application/atom+xml">
   
@@ -139,20 +140,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-test" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-docker入门记录" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      test
+      docker入门记录
     </h1>
   
 
         
-        <a href="/2018/01/31/test/" class="archive-article-date">
-  	<time datetime="2018-01-31T02:37:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-31</time>
+        <a href="/2018/02/08/docker入门记录/" class="archive-article-date">
+  	<time datetime="2018-02-08T03:31:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-08</time>
 </a>
         
       </header>
@@ -165,13 +166,26 @@
           </span>
           <div class="lastModifiedDate">
               <span>最后更新：</span>
-              <time datetime="2018-02-04T06:39:10.030Z" itemprop="dateLastModified">
-              2018-02-04
+              <time datetime="2018-02-08T06:30:49.731Z" itemprop="dateLastModified">
+              2018-02-08
               </time>
           </div>
         </div>
-        <p>测试使用yilia主题<br><a id="more"></a></p>
-<h3 id="使用头像"><a href="#使用头像" class="headerlink" title="使用头像"></a>使用头像</h3><h3 id="首页显示文章摘要"><a href="#首页显示文章摘要" class="headerlink" title="首页显示文章摘要"></a>首页显示文章摘要</h3><h3 id="引入文章阅读量"><a href="#引入文章阅读量" class="headerlink" title="引入文章阅读量"></a>引入文章阅读量</h3>
+        <p>前一阵子在<a href="https://docs.docker.com/get-started/" target="_blank" rel="noopener">Docker官网</a>上自学了Docker，本文记录那些学习成果。<br><a id="more"></a></p>
+<h2 id="Docker的概念和意义"><a href="#Docker的概念和意义" class="headerlink" title="Docker的概念和意义"></a>Docker的概念和意义</h2><h3 id="Docker的概念"><a href="#Docker的概念" class="headerlink" title="Docker的概念"></a>Docker的概念</h3><p>Docker是一个2013年出现的新锐，它一出现就引起了广泛的关注。因为随着互联网的不断发展，网络应用需要面对大数据量，复杂中间架构等等挑战，而解决它们所面对的最大障碍就是现存的应用和基础设施的不协调，Docker的出现让这一问题迎刃而解。它使用静态的镜像将成套的应用打包放在云端，使用容器来在服务器上运行云端的镜像而不会被服务器的基础设施所限制，也不会对服务器上其他应用产生干扰。<br><img src="/images/docker.jpg" alt="Docker logo"></p>
+<h3 id="Docker的意义"><a href="#Docker的意义" class="headerlink" title="Docker的意义"></a>Docker的意义</h3><p>Docker最核心的部分就是容器和镜像，我认为Docker的价值都依赖于这两个创新性的概念。Docker的云端贮备着丰富的镜像文件，它们相当于一个个标准部件，大家都可以上传。当在开发和生产活动中，开发者需要什么工具就可以直接通过命令来下载镜像，然后就可以运行了，远行中的镜像被称为容器，它相当于一个操作系统的一个独立进程，摆脱了对基础设施的限制也是它重要的特性。<br>镜像和容器的出现使得开发者能够更快更专注的进行实际的开发或维护工作，而不用每次在基础设施转移，规模扩大时大费周章。</p>
+<h2 id="Docker的各个组成部分"><a href="#Docker的各个组成部分" class="headerlink" title="Docker的各个组成部分"></a>Docker的各个组成部分</h2><h3 id="镜像-image"><a href="#镜像-image" class="headerlink" title="镜像 image"></a>镜像 image</h3><p>镜像(image)是一个可执行包(executable package)，它包含运行一个app所需的源代码，运行时环境，依赖库，环境变量，和构成文件。</p>
+<h3 id="容器-container"><a href="#容器-container" class="headerlink" title="容器 container"></a>容器 container</h3><p>当镜像(image)被载入内存中执行时，镜像就变成了一个容器(container)，它是镜像的运行实例。</p>
+<h3 id="服务-service"><a href="#服务-service" class="headerlink" title="服务 service"></a>服务 service</h3><p>服务(service)是生产中的容器。一个服务只运行一个镜像(image)，但是它指定了镜像运行的方式：它应该使用哪个端口，它应该运行多少个容器的克隆… …总之服务用于定制容器的该如何运行。</p>
+<h3 id="集群-swarm"><a href="#集群-swarm" class="headerlink" title="集群 swarm"></a>集群 swarm</h3><p>一群运行着docker的机器是一个集群(swarm)，其中有一个管理者(swarm manager)，其他都是工作者(worker)，管理者来发布命令，工作者和管理者一起来执行命令。集群里的所有机器都被称为节点(node)。</p>
+<h3 id="堆栈-stack"><a href="#堆栈-stack" class="headerlink" title="堆栈 stack"></a>堆栈 stack</h3><p>一组互相关联的服务(service)被称为一个堆栈(stack)，堆栈能够协调控制各个服务之间应该如何搭配，来完成一个复杂的工作。</p>
+<h2 id="Docker的操作"><a href="#Docker的操作" class="headerlink" title="Docker的操作"></a>Docker的操作</h2><h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker login: 登录</span><br><span class="line">docker --version: 查看docker版本</span><br></pre></td></tr></table></figure>
+<h3 id="和镜像相关的操作"><a href="#和镜像相关的操作" class="headerlink" title="和镜像相关的操作"></a>和镜像相关的操作</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">dokcer build -t friendlyhello .: 用当前文件夹的Dockerfile创建friendlyhello镜像(image)</span><br><span class="line"></span><br><span class="line">docker images: 查看本地的docker镜像</span><br><span class="line">docker image ls -a: 上同</span><br><span class="line">docker image rm &lt;image id&gt;: 删除特定的image</span><br><span class="line">docker image rm $(docker image ls -a -q): 删除全部的image</span><br><span class="line"></span><br><span class="line">docker run -p 4000:80 friendlyhello: 运行friendlyhello，并将本机的4000端口和container的80进行映射</span><br><span class="line">docker run -d -p 4000:80 friendlyhello: 和上面相同，但以分离模式运行</span><br><span class="line"></span><br><span class="line">docker tag image username/repository:tag: 为镜像打上标签</span><br><span class="line">    docker tag friendlyhello john/get-started:part2</span><br><span class="line"></span><br><span class="line">docker push username/repository:tag: 上传打过标签的镜像到目的仓库</span><br><span class="line">docker run username/repository:tag: 运行仓库中的镜像</span><br><span class="line">    docker run hello-world: 运行hello world</span><br></pre></td></tr></table></figure>
+<h3 id="和容器相关的操作"><a href="#和容器相关的操作" class="headerlink" title="和容器相关的操作"></a>和容器相关的操作</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">docker container ls: 查看当前运行中的容器</span><br><span class="line">docker container ls -a: 查看所有容器</span><br><span class="line">docker container ls -q: 查看全部容器的ID</span><br><span class="line"></span><br><span class="line">docker container stop 1fa4ab2cf395: 停止运行ID为1fa4ab2cf395的容器</span><br><span class="line">docker container kill 1fa4ab2cf395: 强制关闭ID为1fa4ab2cf395的容器</span><br><span class="line">docker container rm &lt;hash&gt;: 从本机移除指定ID的容器</span><br><span class="line">docker container rm $(docker container ls -a -q): 移除所有的容器</span><br></pre></td></tr></table></figure>
+<h3 id="和服务相关的操作"><a href="#和服务相关的操作" class="headerlink" title="和服务相关的操作"></a>和服务相关的操作</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker service ls: 查看app中的运行中的service</span><br><span class="line">docker service ps &lt;service&gt;: 查看某个service中的task(运行中的容器)</span><br><span class="line">    docker service ps getstartedlab_web</span><br></pre></td></tr></table></figure>
+<h3 id="和集群相关的操作"><a href="#和集群相关的操作" class="headerlink" title="和集群相关的操作"></a>和集群相关的操作</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">docker swarm init: 初始化一个swarm</span><br><span class="line">docker swarm leave --force: 让一个node离开swarm</span><br><span class="line"></span><br><span class="line">docker-machine ls: 查看虚拟机</span><br><span class="line">docker-machine create -d hyperv --hyperv-virtual-switch &quot;myswitch&quot; myvm1: (win10,hyperv)创建myvm1虚拟机</span><br><span class="line">docker-machine ssh myvm1 &quot;docker swarm init --advertise-addr &lt;myvm1 ip&gt;&quot;: 让虚拟机myvm1初始化swarm，并成为manager</span><br><span class="line">docker-machine ssh myvm2 &quot;docker swarm join --token &lt;token&gt; &lt;ip&gt;:2377&quot;: 虚拟机myvm2加入swarm</span><br><span class="line">docker-machine ssh myvm1 &quot;docker node ls&quot;: 查看swarm中的节点</span><br><span class="line">docker-machine start &lt;machine-name&gt;: 启动指定的虚拟机</span><br><span class="line">docker-machine stop &lt;machine-name&gt;: 停止指定的虚拟机</span><br><span class="line">docker-machine stop $(docker-machine ls -q): 停止所有的虚拟机</span><br><span class="line">docker-machine rm $(docker-machine ls -q): 删除所有的虚拟机</span><br><span class="line"></span><br><span class="line">docker-machine env myvm1</span><br><span class="line"> ~(Run the given command to configure your shell to talk to myvm1): 使用myvm1进行shell指令交互，同时可访问本地文件</span><br></pre></td></tr></table></figure>
+<h3 id="和堆栈相关的操作"><a href="#和堆栈相关的操作" class="headerlink" title="和堆栈相关的操作"></a>和堆栈相关的操作</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker stack ls: 列出运行中的app</span><br><span class="line">docker stack deploy -c &lt;composefile&gt; &lt;appname&gt;: 运行Compse文件，并以appname进行命名</span><br><span class="line">    docker stack deploy -c docker-compose.yml getstartedlab</span><br><span class="line">docker stack rm &lt;appname&gt;: 从stack中拆除某个app</span><br><span class="line">    docker stack rm getstartedlab</span><br></pre></td></tr></table></figure>
+
       
 
       
@@ -179,28 +193,13 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">233</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">244</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/测试//" class="article-tag-list-link color3">测试</a>
+        			<a href="/categories/docker//" class="article-tag-list-link color2">docker</a>
         		</li>
       		
 		</ul>
@@ -255,7 +254,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://renyajie.com/2018/01/31/test/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://renyajie.com/2018/02/08/docker入门记录/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -269,18 +268,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/02/06/github上使用同一账号对多个远程仓库推送/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          github上使用同一账号对多个远程仓库推送
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/01/30/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2018/02/06/github上使用同一账号对多个远程仓库推送/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">github上使用同一账号对多个远程仓库推送</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -307,7 +297,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用头像"><span class="toc-number">1.</span> <span class="toc-text">使用头像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#首页显示文章摘要"><span class="toc-number">2.</span> <span class="toc-text">首页显示文章摘要</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#引入文章阅读量"><span class="toc-number">3.</span> <span class="toc-text">引入文章阅读量</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker的概念和意义"><span class="toc-number">1.</span> <span class="toc-text">Docker的概念和意义</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Docker的概念"><span class="toc-number">1.1.</span> <span class="toc-text">Docker的概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Docker的意义"><span class="toc-number">1.2.</span> <span class="toc-text">Docker的意义</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker的各个组成部分"><span class="toc-number">2.</span> <span class="toc-text">Docker的各个组成部分</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#镜像-image"><span class="toc-number">2.1.</span> <span class="toc-text">镜像 image</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#容器-container"><span class="toc-number">2.2.</span> <span class="toc-text">容器 container</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#服务-service"><span class="toc-number">2.3.</span> <span class="toc-text">服务 service</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#集群-swarm"><span class="toc-number">2.4.</span> <span class="toc-text">集群 swarm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#堆栈-stack"><span class="toc-number">2.5.</span> <span class="toc-text">堆栈 stack</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker的操作"><span class="toc-number">3.</span> <span class="toc-text">Docker的操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本操作"><span class="toc-number">3.1.</span> <span class="toc-text">基本操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#和镜像相关的操作"><span class="toc-number">3.2.</span> <span class="toc-text">和镜像相关的操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#和容器相关的操作"><span class="toc-number">3.3.</span> <span class="toc-text">和容器相关的操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#和服务相关的操作"><span class="toc-number">3.4.</span> <span class="toc-text">和服务相关的操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#和集群相关的操作"><span class="toc-number">3.5.</span> <span class="toc-text">和集群相关的操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#和堆栈相关的操作"><span class="toc-number">3.6.</span> <span class="toc-text">和堆栈相关的操作</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
