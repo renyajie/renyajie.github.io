@@ -16,7 +16,7 @@
 <meta property="og:description" content="如何使用一个Github账号将N个本地项目与N个远程仓库建立关联">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://renyajie.com/images/github同一账号多仓库推送问题.jpg">
-<meta property="og:updated_time" content="2018-02-06T02:42:03.766Z">
+<meta property="og:updated_time" content="2018-03-03T01:39:04.732Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="github上使用同一账号对多个远程仓库推送">
 <meta name="twitter:description" content="如何使用一个Github账号将N个本地项目与N个远程仓库建立关联">
@@ -166,8 +166,8 @@
           </span>
           <div class="lastModifiedDate">
               <span>最后更新：</span>
-              <time datetime="2018-02-06T02:42:03.766Z" itemprop="dateLastModified">
-              2018-02-06
+              <time datetime="2018-03-03T01:39:04.732Z" itemprop="dateLastModified">
+              2018-03-03
               </time>
           </div>
         </div>
@@ -182,6 +182,8 @@
 <h3 id="生成项目密钥并添加在github的对应项目下"><a href="#生成项目密钥并添加在github的对应项目下" class="headerlink" title="生成项目密钥并添加在github的对应项目下"></a>生成项目密钥并添加在github的对应项目下</h3><p>注意文件用合理的名字命名，我使用项目名进行命名<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -f ~/.ssh/id_rsa_goooo -C https://github.com/renyajie/goooo</span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter passphrase (empty for no passphrase): </span><br><span class="line">Enter same passphrase again: </span><br><span class="line">Your identification has been saved in /c/User/Thor/.ssh/id_rsa_goooo.</span><br><span class="line">Your public key has been saved in /c/User/Thor/.ssh/id_rsa_goooo.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line">c0:ff:ee:34:24:11:5e:6d:7c:4c:b1:a0:de:ad:be:ef https://github.com/renyajie/goooo</span><br><span class="line">The key&apos;s randomart image is:</span><br><span class="line">+--[ RSA 2048]----+</span><br><span class="line">|  E   o..o.oo.   |</span><br><span class="line">| M o o o .+CoW   |</span><br><span class="line">|  + o = o. ..    |</span><br><span class="line">| .   . +         |</span><br><span class="line">|        S        |</span><br><span class="line">|       o .       |</span><br><span class="line">|        +        |</span><br><span class="line">|       . o       |</span><br><span class="line">|        ..o.     |</span><br><span class="line">+-----------------+</span><br></pre></td></tr></table></figure></p>
 <h3 id="编辑config文件"><a href="#编辑config文件" class="headerlink" title="编辑config文件"></a>编辑config文件</h3><p>这一步是为了指定推送项目时的域名，和之前配置的git远程仓库相对应<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ vim ~/.ssh/config</span><br><span class="line"># 添加以下内容</span><br><span class="line">Host goooo.github.com</span><br><span class="line">    Hostname github.com</span><br><span class="line">    IdentityFile ~/.ssh/id_rsa_goooo</span><br></pre></td></tr></table></figure></p>
 <h3 id="测试配置是否成功"><a href="#测试配置是否成功" class="headerlink" title="测试配置是否成功"></a>测试配置是否成功</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@goooo.github.com</span><br><span class="line">Hi renyajie/goooo! You&apos;ve successfully authenticated, but GitHub</span><br><span class="line">does not provide shell access.</span><br></pre></td></tr></table></figure>
+<h3 id="2018-3-3修正："><a href="#2018-3-3修正：" class="headerlink" title="2018/3/3修正："></a>2018/3/3修正：</h3><p>在测试配置是否成功前应该先把public key添加到guthub上</p>
+
       
 
       
@@ -302,7 +304,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#发现问题"><span class="toc-number">1.</span> <span class="toc-text">发现问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题根源"><span class="toc-number">2.</span> <span class="toc-text">问题根源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决方案"><span class="toc-number">3.</span> <span class="toc-text">解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#移除项目的远程仓库"><span class="toc-number">3.1.</span> <span class="toc-text">移除项目的远程仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#添加新的远程仓库"><span class="toc-number">3.2.</span> <span class="toc-text">添加新的远程仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#生成项目密钥并添加在github的对应项目下"><span class="toc-number">3.3.</span> <span class="toc-text">生成项目密钥并添加在github的对应项目下</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#编辑config文件"><span class="toc-number">3.4.</span> <span class="toc-text">编辑config文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试配置是否成功"><span class="toc-number">3.5.</span> <span class="toc-text">测试配置是否成功</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#发现问题"><span class="toc-number">1.</span> <span class="toc-text">发现问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题根源"><span class="toc-number">2.</span> <span class="toc-text">问题根源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决方案"><span class="toc-number">3.</span> <span class="toc-text">解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#移除项目的远程仓库"><span class="toc-number">3.1.</span> <span class="toc-text">移除项目的远程仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#添加新的远程仓库"><span class="toc-number">3.2.</span> <span class="toc-text">添加新的远程仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#生成项目密钥并添加在github的对应项目下"><span class="toc-number">3.3.</span> <span class="toc-text">生成项目密钥并添加在github的对应项目下</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#编辑config文件"><span class="toc-number">3.4.</span> <span class="toc-text">编辑config文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试配置是否成功"><span class="toc-number">3.5.</span> <span class="toc-text">测试配置是否成功</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2018-3-3修正："><span class="toc-number">3.6.</span> <span class="toc-text">2018/3/3修正：</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
